@@ -10,7 +10,7 @@ import com.typesafe.sbt.SbtScalariform._
 
 object AlgebirdBuild extends Build {
   val sharedSettings = Project.defaultSettings ++ scalariformSettings ++  Seq(
-    organization := "com.twitter",
+    organization := "com.miguno",
     scalaVersion := "2.10.4",
     crossScalaVersions := Seq("2.10.4", "2.11.5"),
     ScalariformKeys.preferences := formattingPreferences,
@@ -54,7 +54,7 @@ object AlgebirdBuild extends Build {
     },
 
     pomExtra := (
-      <url>https://github.com/twitter/algebird</url>
+      <url>https://github.com/miguno/algebird</url>
       <licenses>
         <license>
           <name>Apache 2</name>
@@ -64,8 +64,8 @@ object AlgebirdBuild extends Build {
         </license>
       </licenses>
       <scm>
-        <url>git@github.com:twitter/algebird.git</url>
-        <connection>scm:git:git@github.com:twitter/algebird.git</connection>
+        <url>git@github.com:miguno/algebird.git</url>
+        <connection>scm:git:git@github.com:miguno/algebird.git</connection>
       </scm>
       <developers>
         <developer>
@@ -98,7 +98,7 @@ object AlgebirdBuild extends Build {
   def youngestForwardCompatible(subProj: String) =
     Some(subProj)
       .filterNot(unreleasedModules.contains(_))
-      .map { s => "com.twitter" % ("algebird-" + s + "_2.10") % "0.9.0" }
+      .map { s => "com.miguno" % ("algebird-" + s + "_2.10") % "0.9.0" }
 
   lazy val algebird = Project(
     id = "algebird",
